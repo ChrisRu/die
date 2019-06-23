@@ -4,7 +4,7 @@
   </die-face>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue'
 import DieDot from '../DieDot.vue'
 import DieFace from '../DieFaceWrapper.vue'
