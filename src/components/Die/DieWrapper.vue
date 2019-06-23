@@ -26,7 +26,7 @@ import DieFaceFive from './DieFaces/DieFaceFive.vue'
 import DieFaceSix from './DieFaces/DieFaceSix.vue'
 
 export default Vue.extend({
-  name: 'die',
+  name: 'die-wrapper',
   components: {
     DieFaceOne,
     DieFaceTwo,
