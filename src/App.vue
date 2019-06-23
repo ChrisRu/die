@@ -1,29 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <dice
+      className="dice"
+      :spinTime="4"
+      :spins="1"
+      v-on:rolling="rolling"
+      v-on:roll="rolled"
+    ></dice>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Vue from 'vue'
+import Dice from './components/Dice/Dice.vue'
 
 export default Vue.extend({
-  name: "app",
+  name: 'app',
   components: {
-    HelloWorld
-  }
-});
+    Dice,
+  },
+  methods: {
+    rolling() {
+      console.log('rolling...')
+    },
+    rolled(diceValue: number) {
+      console.log(diceValue)
+    },
+  },
+})
 </script>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+body
+  background: #000
+
+#app
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  color: #2c3e50
+  margin-top: 60px
+  background: #181818
+  margin: 100px auto
+  padding: 80px 0
+  border-radius: 20px
+  width: 400px
+
+.dice
+  transform: scale(0.7)
 </style>
