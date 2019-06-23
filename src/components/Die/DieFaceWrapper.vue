@@ -1,5 +1,5 @@
 <template>
-  <div class="dice-face" :style="{ transform }">
+  <div class="die-face" :style="{ transform }">
     <slot></slot>
   </div>
 </template>
@@ -8,13 +8,13 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'dice-face-wrapper',
+  name: 'die-face-wrapper',
   props: ['transform'],
 })
 </script>
 
 <style lang="sass" scoped>
-.dice-face
+.die-face
   background: hsla(200, 125%, 30%, .95)
   position: absolute
   width: 200px

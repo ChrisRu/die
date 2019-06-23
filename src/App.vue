@@ -1,30 +1,30 @@
 <template>
   <div id="app">
-    <dice
-      className="dice"
+    <die
+      className="die"
       :spinTime="4"
       :spins="1"
       v-on:rolling="rolling"
       v-on:roll="rolled"
-    ></dice>
+    ></die>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import Dice from './components/Dice/Dice.vue'
+import Die from './components/Die/Die.vue'
 
 export default Vue.extend({
   name: 'app',
   components: {
-    Dice,
+    Die,
   },
   methods: {
     rolling() {
       console.log('rolling...')
     },
-    rolled(diceValue: number) {
-      console.log(diceValue)
+    rolled(dieValue: number) {
+      console.log(dieValue)
     },
   },
 })
@@ -47,6 +47,6 @@ body
   border-radius: 20px
   width: 400px
 
-.dice
+.die
   transform: scale(0.7)
 </style>

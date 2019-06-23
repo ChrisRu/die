@@ -1,26 +1,26 @@
 <template>
-  <div :class="['dice-container', className]">
-    <dice-wrapper
+  <div :class="['die-container', className]">
+    <die-wrapper
       v-on:click="rollCube"
       :spinTime="spinTime"
       :xRand="xRand"
       :yRand="yRand"
-    ></dice-wrapper>
+    ></die-wrapper>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import DiceWrapper from './DiceWrapper.vue'
+import DieWrapper from './DieWrapper.vue'
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
 export default Vue.extend({
-  name: 'dice',
+  name: 'die',
   components: {
-    DiceWrapper,
+    DieWrapper,
   },
   props: {
     spinTime: {
@@ -41,14 +41,14 @@ export default Vue.extend({
   },
   methods: {
     async rollCube() {
-      const diceRoll = this.getRandomDiceThrow()
+      const dieRoll = this.getRandomDieThrow()
 
       // Make it spinnn
       this.xRand = Math.floor(Math.random() * 6 * this.spins) * 4
       this.yRand = Math.floor(Math.random() * 6 * this.spins) * 4
 
       // Make it orientate
-      switch (diceRoll) {
+      switch (dieRoll) {
         case 2:
           this.xRand++
           break
@@ -70,10 +70,10 @@ export default Vue.extend({
 
       await sleep(this.spinTime * 1000)
 
-      this.$emit('roll', diceRoll)
+      this.$emit('roll', dieRoll)
     },
 
-    getRandomDiceThrow() {
+    getRandomDieThrow() {
       return Math.floor(Math.random() * (6 - 1 + 1) + 1)
     },
   },
@@ -81,7 +81,7 @@ export default Vue.extend({
 </script>
 
 <style lang="sass" scoped>
-.dice-container
+.die-container
   width: 200px
   height: 200px
   position: relative
