@@ -1,5 +1,7 @@
 # die
 
+![screenshot](images/screenshot.png?raw=true)
+
 ## Project setup
 
 ```
